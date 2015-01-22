@@ -1,0 +1,11 @@
+# Site settings
+title: CodBits
+description: "Free and Premium Themes, Templates and Components"
+keywords: "Free, web, premium, html5, css3, bootstrap, themes, templates, wordpress, components, navbar, menu, pricing table"
+baseurl: http://codbits.com
+permalink: /:categories/:title.html
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown

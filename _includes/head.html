@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="{{ site.keywords }}">
+  <meta name="author" content="Reardestani">
+
+  <title>{% if page.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }} &middot; {{ site.description }}{% endif %}</title>
+
+  <link rel="stylesheet" href="{{ "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" }}">
+  <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+</head>

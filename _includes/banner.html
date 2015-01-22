@@ -1,0 +1,9 @@
+<section class="banner">
+  <div class="container">
+  	{% if page.description %}
+    <h2 class="description home">{{ page.description }}</h2>
+  	{% else %}
+  	<h2 class="description">{{ page.title }}</h2>
+  	{% endif %}
+  </div>
+</section>

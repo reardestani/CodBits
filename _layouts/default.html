@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+      {{ content }}
+
+    {% include footer.html %}
+
+    <!-- Le javaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    {% if page.page == "post" %}
+    <script src="{{ site.baseurl }}/js/get-statistics.js"></script>
+    <script src="{{ site.baseurl }}/js/update-statistics.js"></script>
+    {% endif %}
+    <script src="{{ site.baseurl }}/js/scripts.js"></script>
+
+    {% if site.baseurl != "" %}
+    <!-- Histats.com  START (CodBits hidden counter)-->
+    <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+    <a href="http://www.histats.com" target="_blank" title="site stats" ><script  type="text/javascript" >
+    try {Histats.start(1,2586830,4,0,0,0,"");
+    Histats.track_hits();} catch(err){};
+    </script></a>
+    <noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2586830&101" alt="site stats" border="0"></a></noscript>
+    <!-- Histats.com  END  -->
+    {% endif %}
+
+  </body>
+
+</html>

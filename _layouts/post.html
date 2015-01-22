@@ -1,0 +1,77 @@
+---
+layout: default
+page: post
+---
+{% include banner.html %}
+
+<section class="post" data-fn="update-views" data-id="{{ page.ID }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-md-9">
+				<header class="post-header">
+					<img src="{{ site.baseurl }}/products/{{ page.ID }}/preview.jpg" class="post-image" alt="{{ page.title }}">
+			  </header>
+
+			  <article class="post-content">
+			    {{ content }}
+			  </article>
+			</div>
+			<div class="col-sm-4 col-md-3">
+
+				{% if page.price == 0 %}
+					<button class="btn btn-block btn-download" data-download="{{ site.baseurl }}/products/{{ page.ID }}/download.zip" data-id="{{ page.ID }}" data-fn="update-downloads">Download</button>
+				{% else %}
+					<button class="btn btn-block btn-purchase" data-purchase="{{ page.purchase }}" data-id="{{ page.ID }}" data-fn="update-purchases">Purchase <small>$</small>{{ page.price }}</button>
+				{% endif %}
+
+				<a href="{{ page.live }}" class="btn btn-block btn-live">Live Preview</a>
+
+				<ul class="list-group">
+					<li class="list-group-item">
+				  	Released on: <span>{{ page.date | date: "%b %-d, %Y" }}</span>
+				  </li>
+				  <li class="list-group-item">
+				  	Category: <span>{{ page.category }}</span>
+				  </li>
+				</ul>
+
+				<ul class="list-group">
+					<li class="list-group-item">
+				  	<span class="badge counter-views">
+				  		<div class="spinner">
+							  <div class="double-bounce1"></div>
+							  <div class="double-bounce2"></div>
+							</div>
+				  	</span>
+				  	Views
+				  </li>
+				  {% if page.price == 0 %}
+				  <li class="list-group-item">
+				  	<span class="badge counter-downloads">
+				  		<div class="spinner">
+							  <div class="double-bounce1"></div>
+							  <div class="double-bounce2"></div>
+							</div>
+				  	</span>
+				  	Downloads
+				  </li>
+				  {% endif %}
+				  <li class="list-group-item">
+				  	<span class="badge counter-likes">
+				  		<div class="spinner">
+							  <div class="double-bounce1"></div>
+							  <div class="double-bounce2"></div>
+							</div>
+				  	</span>
+				  	<button class="btn-link btn-likes" data-id="{{ page.ID }}" data-fn="update-likes">Like me?</button>
+				  </li>
+				</ul>
+				<ul class="list-group">
+					<li class="list-group-item">
+				  	{{ page.tags | array_to_sentence_string }}
+				  </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
